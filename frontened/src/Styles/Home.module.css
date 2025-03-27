@@ -1,0 +1,68 @@
+.home {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     padding: 60px 20px;
+     gap: 50px;
+     background-color: #f8f8f8;
+     color: black;
+     
+}
+
+.homecontent {
+     max-width: 600px;
+}
+
+.homecontent h2 {
+     font-size: 42px;
+     margin-bottom: 20px;
+     color: var(--color-primary); /* If you have a primary color defined */
+}
+
+.homecontent p {
+     font-size: 18px;
+     margin-bottom: 15px;
+     line-height: 1.6;
+}
+
+.homepic img {
+     width: 300px;
+     height: 300px;
+     border-radius: 50%;
+     object-fit: cover;
+     border: 5px solid var(--color-primary);
+     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+     transition: transform 0.3s;
+}
+
+.homepic img:hover {
+     transform: scale(1.05);
+}
+
+/* ✅ Responsive for tablets and mobiles */
+@media (max-width: 768px) {
+     .home {
+          flex-direction: column-reverse;
+          text-align: center;
+          gap: 30px;
+     }
+
+     .homecontent h2 {
+          font-size: 32px;
+     }
+
+     .homepic img {
+          width: 220px;
+          height: 220px;
+     }
+}
+
+@media (max-width: 480px) {
+     .homecontent p {
+          font-size: 16px;
+     }
+
+     .homecontent h2 {
+          font-size: 28px;
+     }
+}

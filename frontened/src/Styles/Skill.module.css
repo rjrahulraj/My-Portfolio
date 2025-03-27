@@ -1,0 +1,92 @@
+.skills {
+     text-align: center;
+     padding: 40px 20px;
+     background-color: #f8f9fa;
+ }
+ 
+ .skills h2 {
+     font-size: 2rem;
+     margin-bottom: 20px;
+     color: #333;
+ }
+ 
+ /* Skill Container */
+ .skillContainer, .languages {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     gap: 20px;
+ }
+ 
+ /* Individual Skill Box */
+ .skill {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     background: white;
+     border-radius: 10px;
+     padding: 15px;
+     width: 120px;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+     transition: transform 0.3s ease-in-out;
+ }
+ 
+ .skill:hover {
+     transform: scale(1.1);
+ }
+ 
+ .skill h3 {
+     font-size: 1rem;
+     margin-top: 10px;
+     color: #555;
+ }
+ 
+ /* Icon Styling */
+ .skill svg {
+     font-size: 40px;  /* Adjust icon size */
+     color: #007bff;  /* Default icon color */
+     transition: color 0.3s ease-in-out;
+ }
+ 
+ /* Color Customization for Icons */
+ .skill:nth-child(1) svg { color: #e34c26; } /* HTML */
+ .skill:nth-child(2) svg { color: #264de4; } /* CSS */
+ .skill:nth-child(3) svg { color: #61dbfb; } /* React */
+ .skill:nth-child(4) svg { color: #68a063; } /* Node.js */
+ .skill:nth-child(5) svg { color: #000; } /* Express */
+ .skill:nth-child(6) svg { color: #6db33f; } /* Spring Boot */
+ .skill:nth-child(7) svg { color: #47a248; } /* MongoDB */
+ .skill:nth-child(8) svg { color: #f34f29; } /* Git */
+ .skill:nth-child(9) svg { color: #333; } /* GitHub */
+ .skill:nth-child(10) svg { color: #764abc; } /* Redux */
+ .skill:nth-child(11) svg { color: #013243; } /* Numpy */
+ .skill:nth-child(12) svg { color: #130654; } /* Pandas */
+ .skill:nth-child(13) svg { 
+    color: #3776AB; /* Python's Blue Color */
+}
+ .languages {
+     margin-top: 20px;
+ }
+ 
+ /* Responsive Design */
+ @media (max-width: 768px) {
+     .skillContainer, .languages {
+         flex-direction: row;
+         justify-content: center;
+         gap: 15px;
+     }
+ 
+     .skill {
+         width: 100px;
+         padding: 10px;
+     }
+ 
+     .skill svg {
+         font-size: 35px;
+     }
+ 
+     .skill h3 {
+         font-size: 0.9rem;
+     }
+ }
+ 

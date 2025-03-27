@@ -1,0 +1,66 @@
+.experience {
+     text-align: center;
+     padding: 40px 20px;
+     background-color: #f8f9fa;
+ }
+ 
+ .experience h2 {
+     font-size: 2rem;
+     margin-bottom: 20px;
+     color: #333;
+ }
+ 
+ .experienceContainer {
+     display: flex;
+     flex-wrap: wrap; /* Allows wrapping on smaller screens */
+     justify-content: center; /* Centers items */
+     gap: 20px; /* Space between experience cards */
+ }
+ 
+ .experienceContent {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     background: white;
+     border-radius: 10px;
+     padding: 20px;
+     max-width: 400px;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+     transition: transform 0.3s ease-in-out;
+ }
+ 
+ .experienceContent:hover {
+     transform: scale(1.05); /* Smooth hover effect */
+ }
+ 
+ .experience img {
+     width: 80px;
+     height: 80px;
+     object-fit: contain;
+     margin-bottom: 10px;
+ }
+ 
+ .experience h3 {
+     font-size: 1.5rem;
+     margin-bottom: 10px;
+     color: #333;
+ }
+ 
+ .experience p {
+     font-size: 1rem;
+     text-align: center;
+     color: #555;
+ }
+ 
+ /* Responsive Design */
+ @media (max-width: 768px) {
+     .experienceContainer {
+         flex-direction: column;
+         align-items: center;
+     }
+ 
+     .experienceContent {
+         max-width: 90%;
+     }
+ }
+ 

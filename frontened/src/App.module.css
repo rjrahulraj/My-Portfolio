@@ -1,0 +1,8 @@
+@import "../src/vars.css";
+
+.App{
+     font-size: x-large;
+     color: var(--color-text);
+     background-color: var(--color-bg);
+     font-family: var(--font-roboto);
+}

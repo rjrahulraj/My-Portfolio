@@ -1,0 +1,77 @@
+@import "../../src/vars.css";
+
+.navbar {
+     background-color: var(--color-bg);
+     padding: 10px 20px;
+     width: 100%;
+     z-index: 999;
+     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+}
+
+.navbarContainer {
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     margin: auto;
+     min-height: 12vh;
+}
+
+.logo h2 {
+     color: white;
+     font-size: 32px;
+     margin: 0;
+}
+
+.navbarLinks {
+     display: flex;
+     list-style: none;
+     gap: 30px;
+}
+
+.navbarLinks li a{
+     color: white;
+     text-decoration: none;
+     font-size: 18px;
+     transition: color 0.3s;
+}
+
+.navbarLinks li a:hover {
+     color: #ffe0b2;
+}
+
+.navbarResponsiveBtn {
+     display: none;
+     background: none;
+     border: none;
+     cursor: pointer;
+     color: white;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+     .navbarLinks{
+          display: none;
+     }
+     .navbarLinks.active {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          position: absolute;
+          top: 90px;
+          right: 20px;
+          background-color: var(--color-dark);
+          padding: 10px 20px;
+          box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+          min-width: 30%;
+          border-radius: 10px;
+          font-size: 4vw;
+     }
+     .logo h2{
+          font-size: 6vw;
+     }
+    
+     .navbarResponsiveBtn {
+          display: block;
+     }
+}

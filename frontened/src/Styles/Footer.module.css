@@ -1,0 +1,84 @@
+.footer {
+     background-color: var(--color-bg);
+     color: white;
+     padding: 60px 20px 40px;
+     text-align: center;
+     margin-inline: 120px ;
+}
+
+.footercontent h2 {
+     font-size: 36px;
+     color: var(--color-primary);
+     margin-bottom: 10px;
+}
+
+.footercontent p {
+     font-size: 18px;
+     margin-bottom: 40px;
+     color: #ccc;
+}
+
+.footerLinks {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;  /* Centers items horizontally */
+     align-items: center;  /* Centers items vertically */
+     gap: 40px;  /* Space between items */
+     animation: fadeIn 1s ease-in;
+ }
+ 
+
+.footerLink {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     gap: 10px;
+     transition: transform 0.3s, color 0.3s;
+}
+
+.footerLink a {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     color: white;
+     text-decoration: none;
+     gap: 8px;
+}
+
+.footerLink a svg {
+     font-size: 40px;
+     transition: transform 0.3s, color 0.3s;
+}
+
+.footerLink p {
+     font-size: 14px;
+     margin: 0;
+     color: #aaa;
+}
+
+.footerLink a:hover svg {
+     transform: scale(1.2);
+     color: var(--color-primary);
+}
+
+.footerLink a:hover p {
+     color: #fff;
+}
+
+@keyframes fadeIn {
+     from { opacity: 0; transform: translateY(30px); }
+     to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 480px) {
+     .footercontent h2 {
+          font-size: 28px;
+     }
+     .footerLinks {
+          gap: 25px;
+          flex-wrap: wrap;
+     }
+     .footerLink a svg {
+          font-size: 32px;
+     }
+}
