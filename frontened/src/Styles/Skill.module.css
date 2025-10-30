@@ -1,92 +1,125 @@
-.skills {
-     text-align: center;
-     padding: 40px 20px;
-     background-color: #f8f9fa;
- }
- 
- .skills h2 {
-     font-size: 2rem;
-     margin-bottom: 20px;
-     color: #333;
- }
- 
- /* Skill Container */
- .skillContainer, .languages {
-     display: flex;
-     flex-wrap: wrap;
-     justify-content: center;
-     gap: 20px;
- }
- 
- /* Individual Skill Box */
- .skill {
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-     background: white;
-     border-radius: 10px;
-     padding: 15px;
-     width: 120px;
-     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-     transition: transform 0.3s ease-in-out;
- }
- 
- .skill:hover {
-     transform: scale(1.1);
- }
- 
- .skill h3 {
-     font-size: 1rem;
-     margin-top: 10px;
-     color: #555;
- }
- 
- /* Icon Styling */
- .skill svg {
-     font-size: 40px;  /* Adjust icon size */
-     color: #007bff;  /* Default icon color */
-     transition: color 0.3s ease-in-out;
- }
- 
- /* Color Customization for Icons */
- .skill:nth-child(1) svg { color: #e34c26; } /* HTML */
- .skill:nth-child(2) svg { color: #264de4; } /* CSS */
- .skill:nth-child(3) svg { color: #61dbfb; } /* React */
- .skill:nth-child(4) svg { color: #68a063; } /* Node.js */
- .skill:nth-child(5) svg { color: #000; } /* Express */
- .skill:nth-child(6) svg { color: #6db33f; } /* Spring Boot */
- .skill:nth-child(7) svg { color: #47a248; } /* MongoDB */
- .skill:nth-child(8) svg { color: #f34f29; } /* Git */
- .skill:nth-child(9) svg { color: #333; } /* GitHub */
- .skill:nth-child(10) svg { color: #764abc; } /* Redux */
- .skill:nth-child(11) svg { color: #013243; } /* Numpy */
- .skill:nth-child(12) svg { color: #130654; } /* Pandas */
- .skill:nth-child(13) svg { 
-    color: #3776AB; /* Python's Blue Color */
+.skillsSection {
+  background: linear-gradient(180deg, #020024 0%, #06163a 60%, #000000 100%);
+  color: #ffffff;
+  padding: 80px 8%;
+  text-align: center;
+  min-height: 100vh;
 }
- .languages {
-     margin-top: 20px;
- }
- 
- /* Responsive Design */
- @media (max-width: 768px) {
-     .skillContainer, .languages {
-         flex-direction: row;
-         justify-content: center;
-         gap: 15px;
-     }
- 
-     .skill {
-         width: 100px;
-         padding: 10px;
-     }
- 
-     .skill svg {
-         font-size: 35px;
-     }
- 
-     .skill h3 {
-         font-size: 0.9rem;
-     }
- }
- 
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  animation: popIn 1.5s ease-in-out forwards alternate;
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+
+.subHeading {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 50px;
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.skillCard {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 24px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.skillCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 30px rgba(0, 255, 153, 0.3);
+}
+
+.category {
+  font-size: 1.25rem;
+  margin-bottom: 18px;
+  color: #00ffcc;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 8px;
+}
+
+.skillItems {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.skillItem {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  transition: background 0.2s ease;
+}
+
+.skillItem:hover {
+  background: linear-gradient(90deg, rgba(0, 255, 204, 0.3), rgba(0, 255, 153, 0.2));
+}
+
+.icon {
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Animation */
+@keyframes slideUp {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.slideUp {
+  animation: slideUp 0.8s ease forwards;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .heading {
+    font-size: 2rem;
+  }
+  .skillsSection {
+    padding: 60px 6%;
+  }
+}
+
+@media (max-width: 480px) {
+  .skillCard {
+    text-align: center;
+  }
+  .skillItems {
+    justify-content: center;
+  }
+}
+
+
+@keyframes popIn {
+  0% {transform: scale(0.9); opacity: 0;}
+  50% {transform: scale(1.05);opacity: 1;}
+  100% {transform: scale(1);}
+}

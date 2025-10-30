@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "My Hacktoberfest 2025 Journey",
+    "author": "Rahul Raj",
+    "date": "2025-10-30",
+    "content": "Hacktoberfest 2025 was an incredible open-source experience. I contributed to multiple repositories including a job portal frontend built with React and TypeScript, a competitive programming repo, and a flag guessing game in vanilla JavaScript. I submitted 12 pull requests, with 7 successfully merged!"
+  },
+  {
+    "id": 2,
+    "title": "Building My Portfolio with React + Vite + Tailwind",
+    "author": "Rahul Raj",
+    "date": "2025-09-20",
+    "content": "This portfolio is built using React, Vite, and Tailwind CSS. It features sections like About, Projects, Experience, Skills, and Blog — all with a modern orange-accented UI and smooth animations."
+  },
+  {
+    "id": 3,
+    "title": "How I Improved My DSA Skills",
+    "author": "Rahul Raj",
+    "date": "2025-08-12",
+    "content": "Practicing regularly on platforms like LeetCode and Codeforces helped me strengthen my problem-solving skills. I focused on patterns like sliding window, binary search, and dynamic programming."
+  }
+]

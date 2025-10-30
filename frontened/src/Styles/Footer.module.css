@@ -1,84 +1,241 @@
+@import "../vars.css";
+
+.footerContainer{
+  border: #020024 2px solid;
+}
+
+.footerLine{
+  display: block;               
+  height: 12px;                 
+  margin: 18px 0;               
+  background: linear-gradient(90deg,
+              #576cbc 0%,
+              #8a3ffc 50%,
+              #00ffd1 100%);
+  border-radius: 8px;  
+}
+
 .footer {
-     background-color: var(--color-bg);
-     color: white;
-     padding: 60px 20px 40px;
-     text-align: center;
-     margin-inline: 120px ;
+  background: var(--color-bg, linear-gradient(180deg,#020024 0%, #06163a 60%, #000000 100%));
+  color: var(--color-text, #e6eefc);
+  padding-inline: 30px;
+  padding: 10px 0 30px 0;
+  
+  display: flex;
+  gap: 32px;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-inline: auto;
+  margin-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.03);
+  box-shadow: 0 -6px 40px rgba(2,8,20,0.35) inset;
+  border-radius: 12px;
+  max-width: 1200px;   
+  animation: slideUpWork 1.5s ease-in-out forwards alternate;
 }
 
-.footercontent h2 {
-     font-size: 36px;
-     color: var(--color-primary);
-     margin-bottom: 10px;
+.copyRight {
+  max-width: 1200px;
+  margin: 18px auto 36px; 
+  color: rgba(230,238,252,0.7);
+  text-align: center;
+  font-size: 0.92rem;
 }
 
-.footercontent p {
-     font-size: 18px;
-     margin-bottom: 40px;
-     color: #ccc;
+
+.leftFooterContent {
+  flex: 1 1 48%;
+  min-width: 240px;
+  animation: popIn 1.5s ease-in-out forwards alternate;
 }
 
-.footerLinks {
-     display: flex;
-     flex-wrap: wrap;
-     justify-content: center;  /* Centers items horizontally */
-     align-items: center;  /* Centers items vertically */
-     gap: 40px;  /* Space between items */
-     animation: fadeIn 1s ease-in;
- }
- 
-
-.footerLink {
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-     gap: 10px;
-     transition: transform 0.3s, color 0.3s;
+.leftFooterContent h2 {
+  margin: 0 0 10px 0;
+  font-size: 1.45rem;
+  letter-spacing: 0.4px;
+  color: var(--color-text);
 }
 
-.footerLink a {
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-     color: white;
-     text-decoration: none;
-     gap: 8px;
+.leftFooterContent p {
+  margin: 6px 0;
+  line-height: 1.5;
+  color: rgba(230,238,252,0.9);
+  font-size: 0.96rem;
 }
 
-.footerLink a svg {
-     font-size: 40px;
-     transition: transform 0.3s, color 0.3s;
+.deginaton{
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  
 }
 
-.footerLink p {
-     font-size: 14px;
-     margin: 0;
-     color: #aaa;
+.rightFooterContent {
+  flex: 1 1 48%;
+  min-width: 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.footerLink a:hover svg {
-     transform: scale(1.2);
-     color: var(--color-primary);
+.rightFooterContent h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.15rem;
+  color: var(--color-text);
 }
 
-.footerLink a:hover p {
-     color: #fff;
+.iconcontainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 12px;
+  align-items: start;
 }
 
-@keyframes fadeIn {
-     from { opacity: 0; transform: translateY(30px); }
-     to { opacity: 1; transform: translateY(0); }
+.iconcontainer > div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease;
+  cursor: pointer;
+  user-select: none;
+  animation: popIn 1.5s ease-in-out forwards alternate;
 }
 
-@media (max-width: 480px) {
-     .footercontent h2 {
-          font-size: 28px;
-     }
-     .footerLinks {
-          gap: 25px;
-          flex-wrap: wrap;
-     }
-     .footerLink a svg {
-          font-size: 32px;
-     }
+.iconcontainer svg {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  display: block;
+  color: var(--color-text);
 }
+
+.iconsName {
+  margin: 0;
+  font-size: 0.98rem;
+  color: rgba(230,238,252,0.95);
+  font-weight: 500;
+}
+
+.iconcontainer > div:hover,
+.iconcontainer > div:focus {
+  transform: translateY(-6px);
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  box-shadow: 0 8px 28px rgba(4,12,30,0.45);
+  outline: none;
+}
+
+.copyRight {
+  max-width: 1200px;
+  /* margin: 18px auto 36px; */
+  color: rgba(230,238,252,0.7);
+  text-align: center;
+  font-size: 0.92rem;
+}
+
+@media (max-width: 900px) {
+  .footer {
+    padding: 36px 18px;
+    gap: 20px;
+  }
+
+  .leftFooterContent,
+  .rightFooterContent {
+    flex-basis: 100%;
+  }
+
+  .iconcontainer {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+}
+
+
+@media (max-width: 600px) {
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 28px 14px;
+  }
+
+  .leftFooterContent,
+  .rightFooterContent {
+    width: 100%;
+  }
+
+  .leftFooterContent p,
+  .rightFooterContent p,
+  .iconsName {
+    text-align: center;
+  }
+
+  .iconcontainer {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    width: 100%;
+  }
+
+  .iconcontainer > div {
+    justify-content: center; 
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .iconcontainer svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .iconsName {
+    font-size: 0.92rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .iconcontainer {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .logo h2 { font-size: 1.25rem; }
+
+  .leftFooterContent p,
+  .iconsName {
+    font-size: 0.9rem;
+  }
+}
+
+@keyframes neonExpand {
+  0% {transform: scale(0.9);box-shadow: 0 0 0px #00ff99;}
+  60% {transform: scale(1.05);box-shadow: 0 0 25px #00ff99;}
+  100% {transform: scale(1);box-shadow: 0 0 15px #00ff99;}
+}
+
+
+#work.active {animation: slideUpWork 1s ease forwards;}
+
+@keyframes slideUpWork {
+  0% {transform: translateY(100px);opacity: 0;}
+  60% {opacity: 1;filter: brightness(1.2);}
+  100% {transform: translateY(0);opacity: 1;}
+}
+
+#work.active h2, 
+#work.active h3, 
+#work.active p {
+  animation: flicker 1.5s linear;
+}
+
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {opacity: 1;}
+  20%, 24%, 55% {opacity: 0.3;}
+}
+
+#car.active {animation: popIn 1s ease forwards;}
+
+@keyframes popIn {
+  0% {transform: scale(0.9); opacity: 0;}
+  50% {transform: scale(1.05);opacity: 1;}
+  100% {transform: scale(1);}}

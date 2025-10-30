@@ -6,17 +6,19 @@
      gap: 50px;
      background-color: #f8f8f8;
      color: black;
+     /* animation: popIn 1.5s ease-in-out forwards alternate; */
      
 }
 
 .homecontent {
      max-width: 600px;
+     animation: slideInLeft 1.5s ease-in-out forwards alternate;
 }
 
 .homecontent h2 {
      font-size: 42px;
      margin-bottom: 20px;
-     color: var(--color-primary); /* If you have a primary color defined */
+     color: var(--color-primary); 
 }
 
 .homecontent p {
@@ -25,6 +27,41 @@
      line-height: 1.6;
 }
 
+.homebtn > button {
+     padding: 10px 20px;
+     margin-right: 15px;
+     font-size: 16px;
+     border: none;
+     border-radius: 5px;
+     cursor: pointer;
+     transition: background-color 0.3s, color 0.3s;
+
+}
+.connectBtn {
+     background-color: var(--color-primary);
+     color: white;
+}
+.connectBtn:hover {
+     background-color: var(--color-primary-dark);
+     color: var(--color-primary);
+}
+
+.viewBtn {
+     background-color: transparent;
+     color: var(--color-primary);
+     border: 2px solid blue;
+     /* border: 2px solid red; */
+    
+}
+
+.viewBtn:hover {
+     background-color: var(--color-primary);
+     color: white;
+}
+.homepic {
+     flex-shrink: 0;
+     position: relative;
+}
 .homepic img {
      width: 300px;
      height: 300px;
@@ -33,13 +70,14 @@
      border: 5px solid var(--color-primary);
      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
      transition: transform 0.3s;
+     animation: slideInRight 1.5s ease-in-out forwards alternate;
+     
 }
 
 .homepic img:hover {
      transform: scale(1.05);
 }
 
-/* ✅ Responsive for tablets and mobiles */
 @media (max-width: 768px) {
      .home {
           flex-direction: column-reverse;
@@ -65,4 +103,69 @@
      .homecontent h2 {
           font-size: 28px;
      }
+}
+
+
+
+@keyframes neonExpand {
+  0% {transform: scale(0.9);box-shadow: 0 0 0px #00ff99;}
+  60% {transform: scale(1.05);box-shadow: 0 0 25px #00ff99;}
+  100% {transform: scale(1);box-shadow: 0 0 15px #00ff99;}
+}
+
+
+#work.active {animation: slideUpWork 1s ease forwards;}
+
+@keyframes slideUpWork {
+  0% {transform: translateY(100px);opacity: 0;}
+  60% {opacity: 1;filter: brightness(1.2);}
+  100% {transform: translateY(0);opacity: 1;}
+}
+
+#work.active h2, 
+#work.active h3, 
+#work.active p {
+  animation: flicker 1.5s linear;
+}
+
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {opacity: 1;}
+  20%, 24%, 55% {opacity: 0.3;}
+}
+
+#car.active {animation: popIn 1s ease forwards;}
+
+@keyframes popIn {
+  0% {transform: scale(0.9); opacity: 0;}
+  50% {transform: scale(1.05);opacity: 1;}
+  100% {transform: scale(1);}}
+
+  @keyframes slideInLeft {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+    filter: brightness(1.2);
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+    filter: brightness(1.2);
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }

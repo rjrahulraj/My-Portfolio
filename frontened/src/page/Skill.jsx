@@ -1,113 +1,89 @@
-import styles from '../Styles/Skill.module.css'
-import css from '../../assests/skills/css.png'
-import html from '../../assests/skills/html.png'
-import mongodb from '../../assests/skills/mongodb.png'
-import node from '../../assests/skills/node.png'
-import react from '../../assests/skills/react.png'
-import springboot from '../../assests/skills/spring-boot-logo.png'
+import React from "react";
+import styles from "../Styles/Skill.module.css";
+import { FaReact, FaNodeJs, FaGitAlt, FaPython, FaDatabase, FaAws, FaJava, FaDocker } from "react-icons/fa";
+import { SiMongodb, SiJavascript, SiTypescript, SiCplusplus, SiTailwindcss, SiExpress, SiSocketdotio, SiSpringboot, SiNumpy, SiPandas, SiStreamlit, SiLinux, SiGithub } from "react-icons/si";
 
+const skills = [
+     {
+          category: "Frontend Development",
+          items: [
+               { name: "React.js", icon: <FaReact color="#61DBFB" /> },
+               { name: "JavaScript (ES6+)", icon: <SiJavascript color="#F7DF1E" /> },
+               { name: "TypeScript", icon: <SiTypescript color="#007ACC" /> },
+               { name: "Tailwind CSS", icon: <SiTailwindcss color="#38BDF8" /> },
+          ],
+     },
+     {
+          category: "Backend Development",
+          items: [
+               { name: "Node.js", icon: <FaNodeJs color="#3C873A" /> },
+               { name: "Express.js", icon: <SiExpress color="#FFFFFF" /> },
+               { name: "Spring Boot", icon: <SiSpringboot color="#6DB33F" /> },
+               { name: "Socket.IO", icon: <SiSocketdotio color="#FFFFFF" /> },
+          ],
+     },
+     {
+          category: "Database & Cloud",
+          items: [
+               { name: "MongoDB", icon: <SiMongodb color="#4DB33D" /> },
+               { name: "SQL", icon: <FaDatabase color="#00B8D9" /> },
+               { name: "AWS (EC2, S3)", icon: <FaAws color="#FF9900" /> },
+          ],
+     },
+     {
+          category: "Programming Languages",
+          items: [
+               { name: "C++", icon: <SiCplusplus color="#004482" /> },
+               { name: "Python", icon: <FaPython color="#FFD43B" /> },
+               { name: "Java", icon: <FaJava color="#E51F24" /> },
+          ],
+     },
+     {
+          category: "Data Science & Tools",
+          items: [
+               { name: "NumPy", icon: <SiNumpy color="#4DABCF" /> },
+               { name: "Pandas", icon: <SiPandas color="#150458" /> },
+               { name: "Streamlit", icon: <SiStreamlit color="#FF4B4B" /> },
+          ],
+     },
+     {
+          category: "DevOps & Others",
+          items: [
+               { name: "Docker (Learning)", icon: <FaDocker color="#0db7ed" /> },
+               { name: "Linux", icon: <SiLinux color="#FCC624" /> },
+               { name: "Git", icon: <FaGitAlt color="#F1502F" /> },
+               { name: "GitHub", icon: <SiGithub color="#ffffff" /> },
+          ],
+     },
+];
 
-import { FaHtml5 } from "react-icons/fa";
-import { FaCss3Alt } from "react-icons/fa";
-import { FaReact } from "react-icons/fa";
-import { FaNode } from "react-icons/fa";
-import { SiExpress } from "react-icons/si";
-import { SiSpringboot } from "react-icons/si";
-import { DiMongodb } from "react-icons/di";
-import { FaGitAlt } from "react-icons/fa";
-import { FaSquareGithub } from "react-icons/fa6";
-import { SiRedux } from "react-icons/si";
-import { SiCplusplusbuilder } from "react-icons/si";
-import { IoLogoJavascript } from "react-icons/io5";
-import { SiTypescript } from "react-icons/si";
-import { FaJava } from "react-icons/fa6";
-import { SiNumpy } from "react-icons/si";
-import { SiPandas } from "react-icons/si";
-import { FaPython } from "react-icons/fa";
-
-const Skill = () => {
+const Skills = () => {
      return (
-          <section>
-               <div className={styles.skills}>
-                    <h2>Skills</h2>
-                    <div className={styles.skillContainer}>
-                         <div className={styles.skill}>
-                              <FaHtml5 />
-                              <h3>HTML</h3>
-                         </div>
-                         <div className={styles.skill}>
-                              <FaCss3Alt />
-                              <h3>CSS</h3>
-                         </div>
-                         <div className={styles.skill}>
-                              <FaReact />
-                              <h3>React</h3>
-                         </div>
-                         <div className={styles.skill}>
-                              <FaNode />
-                              <h3>Node</h3>
-                         </div>
-                         <div className={styles.skill}>
-                              <SiExpress />
-                              <h3>Express</h3>
-                         </div>
-                         <div className={styles.skill}>
-                              <SiSpringboot />
-                              <h3>Spring-boot</h3>
-                         </div>
-                         <div className={styles.skill}>
-                              < DiMongodb />
-                              <h3>Mongodb</h3>
-                         </div>
-                         <div className={styles.skill}>
-                              < FaGitAlt />
-                              <h3>Git </h3>
-                         </div>
-                         <div className={styles.skill}>
-                              < FaSquareGithub />
-                              <h3>GitHub </h3>
-                         </div>
-                         <div className={styles.skill}>
-                              < SiRedux />
-                              <h3>Redux</h3>
-                         </div>
-                         <div className={styles.skill}>
-                              < SiNumpy />
-                              <h3>Numpy</h3>
-                         </div>
-                         <div className={styles.skill}>
-                              < SiPandas />
-                              <h3>Pandas</h3>
-                         </div>
+          <section className={styles.skillsSection} id="skills">
+               <div className={styles.container}>
+                    <h2 className={styles.heading}>Skills & Expertise</h2>
+                    <p className={styles.subHeading}>
+                         A blend of frontend precision, backend logic, and full-stack craftsmanship.
+                    </p>
 
-
+                    <div className={styles.skillsGrid}>
+                         {skills.map((category, index) => (
+                              <div key={index} className={`${styles.skillCard} slideUp`}>
+                                   <h3 className={styles.category}>{category.category}</h3>
+                                   <div className={styles.skillItems}>
+                                        {category.items.map((item, i) => (
+                                             <div key={i} className={styles.skillItem}>
+                                                  <div className={styles.icon}>{item.icon}</div>
+                                                  <p>{item.name}</p>
+                                             </div>
+                                        ))}
+                                   </div>
+                              </div>
+                         ))}
                     </div>
-                    <div className={styles.languages}>
-                         <div className={styles.skill}>
-                              < SiCplusplusbuilder />
-                              <h3>C/C++</h3>
-                         </div>
-                         <div className={styles.skill}>
-                              < IoLogoJavascript />
-                              <h3>Javascript</h3>
-                         </div>
-                         <div className={styles.skill}>
-                              < SiTypescript />
-                              <h3>Typescript</h3>
-                         </div>
-                         <div className={styles.skill}>
-                              < FaJava />
-                              <h3>Java</h3>
-                         </div>
-                         <div className={styles.skill}>
-                              < FaPython />
-                              <h3>Python</h3>
-                         </div>
-                    </div>
-
                </div>
           </section>
-     )
-}
+     );
+};
 
-export default Skill
+export default Skills;
